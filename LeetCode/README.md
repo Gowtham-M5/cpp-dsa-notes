@@ -17,8 +17,5 @@ Problems are grouped by topic so the repository stays easy to navigate.
 - [1672. Richest Customer Wealth](./Arrays/1672-richest-customer-wealth.md)
 - [1920. Build Array from Permutation](./Arrays/1920-build-array-from-permutation.md)
 
-### Learning notes
-- [Array Level 2 — Progress & Solutions](./Arrays/array-level-2-progress.md) — array problems practised in our learning sessions, with approaches, C++ patterns, examples, and complexity.
-
 ## Naming convention
 Files use the format `problem-number-problem-name.md`. Learning summaries can use descriptive names. Add new problems to the appropriate topic folder and update this index.
