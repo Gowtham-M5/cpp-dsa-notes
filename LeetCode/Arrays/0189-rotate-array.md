@@ -113,3 +113,99 @@ Final result: `[5,6,7,1,2,3,4]`
 **Save → Shift backward → Copy.**
 
 This is the temporary-storage approach to array rotation. Another common solution uses three reversals and O(1) extra space.
+
+
+---
+
+# Solution 2 — Three Reversals (O(1) Extra Space)
+
+This is the second solution for the same problem. The original temporary-array solution above is unchanged.
+
+## Approach
+
+1. Reverse the entire array.
+2. Reverse the first `k` elements.
+3. Reverse the remaining elements from index `k` to `n - 1`.
+
+First, reversing the entire array brings the last `k` elements to the front, but both parts are reversed. Reversing each part separately restores the correct order.
+
+## C++ Solution
+
+```cpp
+class Solution {
+public:
+    void reverse(vector<int>& nums, int left, int right) {
+        while (left < right) {
+            swap(nums[left], nums[right]);
+            left++;
+            right--;
+        }
+    }
+
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        if (n == 0) {
+            return;
+        }
+
+        k = k % n;
+
+        reverse(nums, 0, n - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, n - 1);
+    }
+};
+```
+
+## Dry Run
+
+Input: `nums = [1,2,3,4,5,6,7]`, `k = 3`
+
+### Step 1 — Reverse the entire array
+
+```text
+[1,2,3,4,5,6,7]
+        ↓
+[7,6,5,4,3,2,1]
+```
+
+### Step 2 — Reverse the first `k = 3` elements
+
+Reverse the elements at indices `0` through `2`:
+
+```text
+[7,6,5,4,3,2,1]
+        ↓
+[5,6,7,4,3,2,1]
+```
+
+Now `[5,6,7]` is at the beginning in the correct order.
+
+### Step 3 — Reverse the remaining elements
+
+Reverse the elements at indices `3` through `6`:
+
+```text
+[5,6,7,4,3,2,1]
+        ↓
+[5,6,7,1,2,3,4]
+```
+
+Final result: `[5,6,7,1,2,3,4]`
+
+## Complexity
+
+- **Time:** O(n) — the three reversals together process the array linearly.
+- **Extra space:** O(1) — reversal uses only a few variables and no additional array.
+
+## Common Mistakes to Avoid
+
+- Forgetting `k = k % n` when `k` may be greater than the array length.
+- Forgetting to check `n == 0` before using `k % n`.
+- Using incorrect indices: reverse the first part from `0` to `k - 1`, then the remaining part from `k` to `n - 1`.
+
+## Pattern Summary
+
+**Reverse all → Reverse first `k` → Reverse the rest.**
+
+This approach achieves O(n) time and O(1) extra space, so it is more space-efficient than the temporary-array solution above.
