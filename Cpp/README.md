@@ -1,6 +1,6 @@
 # C++ Fundamentals Notes
 
-This section contains the C++ concepts I have learned while preparing for DSA and placement interviews.
+This section contains the C++ concepts and array problem-solving techniques I have learned while preparing for DSA and placement interviews.
 
 ## Concepts
 
@@ -10,6 +10,7 @@ This section contains the C++ concepts I have learned while preparing for DSA an
 4. [Loops](./04-loops.md)
 5. [Functions](./05-functions.md)
 6. [Array Fundamentals](./06-array-fundamentals.md)
+7. [Array Level 2 — Problems & Solutions](./array-level-2.md)
 
 ## How to use these notes
 
@@ -18,4 +19,4 @@ This section contains the C++ concepts I have learned while preparing for DSA an
 - Try changing the inputs and predicting the output.
 - Focus on understanding the logic rather than memorizing code.
 
-These notes cover the fundamentals learned so far. New concepts will be added as I continue learning C++.
+These notes cover the fundamentals and array problem-solving techniques learned so far. New concepts will be added as I continue learning C++.
