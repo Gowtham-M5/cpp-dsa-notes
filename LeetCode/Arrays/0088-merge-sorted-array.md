@@ -3,27 +3,46 @@
 ## Problem
 Merge two sorted arrays into `nums1`. The first `m` elements of `nums1` and all `n` elements of `nums2` are valid; `nums1` has room for all elements.
 
-## Approach practised
-Use three pointers to merge from the back:
-- `i = m - 1`: last valid element in `nums1`.
+## My approach: Three pointers from the back
+- `i = m - 1): last valid element in `nums1`.
 - `j = n - 1`: last element in `nums2`.
 - `k = m + n - 1`: last index in `nums1`.
 
-Compare the values at `i` and `j`. Put the larger value at `nums1[k]), then move the pointer for the value used backward. Filling from the back avoids overwriting the valid elements at the beginning of `nums1`.
+Compare the values at `i` and `j`. Place the larger value at `nums1[k]`, move the source pointer backward, and decrement `k`. If any values remain in `nums2`, copy them into `nums1`.
 
-If any values remain in `nums2`, they must be copied into `nums1`.
+## Code I wrote
+```cpp
+class Solution {
+public:
+void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+int i = m - 1;
+int j = n - 1;
+int k = m + n - 1;
+while (i >= 0 && j >= 0) {
+if (nums1[i] > nums2[j]) {
+nums1[k] = nums1[i];
+i--;
+}
+else {
+nums1[k]=nums2[j];
+j--;
+}
+k--;
+}
+while(j>=0){
+nums1[k]=nums2[j];
+j--;
+}
+}
+};
+```
 
 ## Example
-`nums1 = [4,5,6,0,0,0]`, `m = 3`  
-`nums2 = [1,2,3]`, `n = 3`
-
+`nums1 = [4,5,6,0,0,0]`, `m = 3`; `nums2 = [1,2,3]`, `n = 3`  
 Result: `[1,2,3,4,5,6]`
 
-## Learning from debugging
-An earlier attempt produced an incorrect array because values in `nums1` were overwritten before they were safely placed. Working backward prevents that problem.
-
-## Code note
-The code previously saved here was not verified as the exact code I personally wrote. It has been removed rather than presenting an assistant-written implementation as mine. Add my own accepted code after I retype or retry it.
+## Why fill from the back?
+The back positions are empty, so placing the largest remaining value there avoids overwriting valid values at the beginning of `nums1`.
 
 ## Complexity
 - Time: `O(m + n)`
