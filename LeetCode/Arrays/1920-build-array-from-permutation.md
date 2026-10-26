@@ -4,22 +4,30 @@
 Given an array `nums`, build an answer array such that `ans[i] = nums[nums[i]]`.
 
 ## Core idea
-Create an answer array with the same number of elements as `nums`. For each index `i), use the value `nums[i]` as an index into `nums`, then store that result at `ans[i]`.
+Create an answer vector with the same size as `nums`. For every index `i`, use `nums[i]` as an index into `nums` and store that value in `ans[i]`.
+
+## Code I wrote
+```cpp
+class Solution {
+public:
+    vector<int> buildArray(vector<int>& nums) {
+        vector<int> ans(nums.size());
+        for (int i = 0; i < nums.size(); i++) {
+            ans[i] = nums[nums[i]];
+        }
+        return ans;
+    }
+};
+```
 
 ## Example
-Input: `nums = [0,2,1,5,3,4]`
+Input: `nums = [0,2,1,5,3,4]`  
+Output: `[0,1,2,4,5,3]`
 
-- `ans[0] = nums[nums[0]] = nums[0] = 0`
-- `ans[1] = nums[nums[1]] = nums[2] = 1`
-- Continue the same operation for every index.
-
-Output: `[0,1,2,4,5,3]`.
+For example, `ans[1] = nums[nums[1]] = nums[2] = 1`.
 
 ## Important detail
-Allocate the answer array with the required size before assigning values by index.
-
-## Code note
-The code previously saved here was not verified as the exact code I personally wrote. It has been removed rather than presenting an assistant-written implementation as mine. Add my own code after retrying the problem.
+`vector<int> ans(nums.size())` creates an answer vector with the required number of positions before assigning values by index.
 
 ## Complexity
 - Time: `O(n)`
