@@ -4,17 +4,34 @@
 Each row in `accounts` contains one customer's bank balances. Return the maximum total wealth of any customer.
 
 ## Core idea: Sum each row separately
-- Start with a maximum wealth value of `0`.
-- For each customer (row), reset the row's sum to `0`.
-- Add every balance in that row.
-- Compare the row total with the maximum wealth and keep the larger value.
-- After checking all customers, return the maximum wealth.
+- Start `maxwealth` at `0`.
+- For every customer, reset `sum` to `0`.
+- Add all balances in that row.
+- If the row sum is greater than `maxwealth`, update `maxwealth`.
+- Return `maxwealth`.
+
+## Code from my practiced solution
+```cpp
+class Solution {
+public:
+    int maximumWealth(vector<vector<int>>& accounts) {
+        int maxwealth = 0;
+        for (int i = 0; i < accounts.size(); i++) {
+            int sum = 0;
+            for (int j = 0; j < accounts[i].size(); j++) {
+                sum += accounts[i][j];
+            }
+            if (sum > maxwealth) {
+                maxwealth = sum;
+            }
+        }
+        return maxwealth;
+    }
+};
+```
 
 ## Important concept
-Reset the sum for every customer. If the sum is not reset for each row, balances from different customers will be mixed together.
-
-## Code note
-The code previously saved here was not verified as the exact code I personally wrote. It has been removed rather than presenting an assistant-written implementation as mine. Add my own code after retrying the problem.
+Reset `sum = 0` for every customer. Otherwise, balances from different customers would be added together.
 
 ## Complexity
 If there are `r` customers and `c` accounts per customer:
