@@ -4,31 +4,40 @@
 Count how many numbers in the array contain an even number of digits.
 
 ## Core idea: Count digits of each number
-For each number:
-1. Keep its value in a temporary variable so the original array element is unchanged.
-2. Repeatedly divide the temporary number by 10.
-3. Increase a digit counter each time the loop runs.
-4. If the digit count is even, increase the answer.
+For each number, use a temporary variable and repeatedly divide it by 10. Each division removes the last digit. If the digit count is even, increase the answer.
 
-## Example
-For `nums = [12,345,2,6,7896]`:
-- `12` has 2 digits — even.
-- `345` has 3 digits — odd.
-- `2` has 1 digit — odd.
-- `6` has 1 digit — odd.
-- `7896` has 4 digits — even.
-
-There are 2 numbers with an even number of digits.
+## Code from my practiced solution
+```cpp
+class Solution {
+public:
+    int findNumbers(vector<int>& nums) {
+        int count = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            int num = nums[i];
+            int digits = 0;
+            while (num > 0) {
+                num /= 10;
+                digits++;
+            }
+            if (digits % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+};
+```
 
 ## Important details
+- `num` is a temporary copy, so `nums[i]` stays unchanged.
 - `num /= 10` removes the last digit each iteration.
 - `digits % 2 == 0` checks whether the digit count is even.
 - The problem's constraints use positive integers.
 
-## Code note
-The code previously saved here was not verified as the exact code I personally wrote. It has been removed rather than presenting an assistant-written implementation as mine. Add my own code after retrying the problem.
+## Example
+For `nums = [12,345,2,6,7896]`, the numbers with an even digit count are `12` and `7896`. Answer: `2`.
 
 ## Complexity
-If `n` is the number of array elements and `d` is the maximum number of digits:
+If `n` is the number of elements and `d` is the maximum number of digits:
 - Time: `O(n × d)`
 - Extra space: `O(1)`
