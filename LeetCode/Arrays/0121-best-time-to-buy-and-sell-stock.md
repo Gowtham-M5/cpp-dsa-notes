@@ -6,50 +6,22 @@ Choose one day to buy and a later day to sell. Return the maximum profit; return
 ## Core idea: Track the minimum price so far
 - `minprice`: lowest price seen so far.
 - `maxprofit`: best profit found so far.
-- For each price, calculate today's profit using the minimum buying price, update the best profit, then update the minimum price for future days.
+- For each later price, calculate the profit using the minimum buying price seen before that day.
+- Update the best profit when today's profit is larger.
+- Update the minimum price when today's price is lower.
 
-## C++ solution
-```cpp
-class Solution {
-public:
-    int maxProfit(vector<int>& prices) {
-        int maxprofit = 0;
-        int minprice = prices[0];
+The order matters: calculate the profit using the minimum price from earlier days, then update the minimum price for future days.
 
-        for (int i = 1; i < prices.size(); i++) {
-            int profit = prices[i] - minprice;
-            if (profit > maxprofit) {
-                maxprofit = profit;
-            }
-
-            if (prices[i] < minprice) {
-                minprice = prices[i];
-            }
-        }
-
-        return maxprofit;
-    }
-};
-```
-
-## Trace
+## Example
 For `prices = [7,1,5,3,6,4]`:
+- Buy at `1`, then sell later at `5`: profit `4`.
+- Sell later at `6`: profit `5`, which becomes the best profit.
+- The maximum profit is `5`.
 
-| Current price | Profit using minimum so far | Best profit | Minimum after processing |
-|---:|---:|---:|---:|
-| 1 | 1 - 7 = -6 | 0 | 1 |
-| 5 | 5 - 1 = 4 | 4 | 1 |
-| 3 | 3 - 1 = 2 | 4 | 1 |
-| 6 | 6 - 1 = 5 | 5 | 1 |
-| 4 | 4 - 1 = 3 | 5 | 1 |
+For `prices = [7,6,4,3,1]`, prices keep decreasing, so the answer is `0`.
 
-Answer: `5` (buy at 1, sell at 6).
-
-## Why update minimum price?
-Today's lower price could be a better buying point for a later day. We calculate today's profit first, then store the lower price for future comparisons.
-
-## Pattern
-Track the best candidate seen so far while scanning the array once.
+## Code note
+The code previously saved here was not verified as the exact code I personally wrote. It has been removed rather than presenting an assistant-written implementation as mine. Add my own code after I retry the problem.
 
 ## Complexity
 - Time: `O(n)`
