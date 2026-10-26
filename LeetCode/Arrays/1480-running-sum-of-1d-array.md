@@ -4,31 +4,21 @@
 Return an array where each position contains the sum of the original array from index 0 through that position.
 
 ## Core idea
-Keep a running total. Add the current element to the total, then replace the current element with that cumulative total.
-
-## Code from my practiced solution
-```cpp
-class Solution {
-public:
-    vector<int> runningSum(vector<int>& nums) {
-        int sum = 0;
-        for (int i = 0; i < nums.size(); i++) {
-            sum += nums[i];
-            nums[i] = sum;
-        }
-        return nums;
-    }
-};
-```
+Keep a running total. Add the current element to the total, then store that cumulative value in the answer at the current index.
 
 ## Example
-Input: `[1,2,3,4]`  
-Running totals: `1, 3, 6, 10`  
+Input: `[1,2,3,4]`
+
+- First total: `1`
+- Next total: `1 + 2 = 3`
+- Next total: `3 + 3 = 6`
+- Next total: `6 + 4 = 10`
+
 Output: `[1,3,6,10]`
 
-## Important detail
-This solution updates the input vector directly. Each element becomes the running sum up to that index.
+## Code note
+I don't have a reliable record of the exact code you personally typed for this problem. Since you asked me not to put assistant-written code in your notes as if it were yours, I have left the code section out for now. When you retry it and send your code, I'll add your version.
 
 ## Complexity
 - Time: `O(n)`
-- Extra space: `O(1)`
+- Extra space: `O(n)` if you create a separate answer vector; `O(1)` extra space if you update `nums` in place.
