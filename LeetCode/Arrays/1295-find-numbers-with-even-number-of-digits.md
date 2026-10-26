@@ -4,40 +4,31 @@
 Count how many numbers in the array contain an even number of digits.
 
 ## Core idea: Count digits of each number
-For each number, repeatedly divide it by 10 and increment a digit counter. If the digit count is even, increment the answer.
+For each number:
+1. Keep its value in a temporary variable so the original array element is unchanged.
+2. Repeatedly divide the temporary number by 10.
+3. Increase a digit counter each time the loop runs.
+4. If the digit count is even, increase the answer.
 
-## C++ solution
-```cpp
-class Solution {
-public:
-    int findNumbers(vector<int>& nums) {
-        int answer = 0;
+## Example
+For `nums = [12,345,2,6,7896]`:
+- `12` has 2 digits — even.
+- `345` has 3 digits — odd.
+- `2` has 1 digit — odd.
+- `6` has 1 digit — odd.
+- `7896` has 4 digits — even.
 
-        for (int i = 0; i < nums.size(); i++) {
-            int num = nums[i];
-            int digits = 0;
-
-            while (num > 0) {
-                digits++;
-                num /= 10;
-            }
-
-            if (digits % 2 == 0) {
-                answer++;
-            }
-        }
-
-        return answer;
-    }
-};
-```
+There are 2 numbers with an even number of digits.
 
 ## Important details
-- Use a temporary variable `num) so the original array value is not changed.
 - `num /= 10` removes the last digit each iteration.
 - `digits % 2 == 0` checks whether the digit count is even.
-- LeetCode's constraints make the input numbers positive.
+- The problem's constraints use positive integers.
+
+## Code note
+The code previously saved here was not verified as the exact code I personally wrote. It has been removed rather than presenting an assistant-written implementation as mine. Add my own code after retrying the problem.
 
 ## Complexity
-- Time: `O(n × d)), where `d` is the maximum number of digits.
+If `n` is the number of array elements and `d` is the maximum number of digits:
+- Time: `O(n × d)`
 - Extra space: `O(1)`
