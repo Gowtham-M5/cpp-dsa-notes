@@ -64,5 +64,3 @@ Input: `nums = [1,2,3,4,5,6,7]`, `k = 3`
 ## Complexity
 - Time: `O(n)`
 - Extra space: `O(1)`
-
-This file records the three-reversal solution practised in chat. The separate temporary-array solution was removed so the notes do not present an unverified implementation as your own.
