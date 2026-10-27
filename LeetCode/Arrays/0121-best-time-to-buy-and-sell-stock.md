@@ -20,9 +20,6 @@ For `prices = [7,1,5,3,6,4]`:
 
 For `prices = [7,6,4,3,1]`, prices keep decreasing, so the answer is `0`.
 
-## Code note
-The code previously saved here was not verified as the exact code I personally wrote. It has been removed rather than presenting an assistant-written implementation as mine. Add my own code after I retry the problem.
-
 ## Complexity
 - Time: `O(n)`
 - Extra space: `O(1)`
