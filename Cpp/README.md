@@ -12,6 +12,10 @@ This section contains the C++ concepts and array problem-solving techniques I ha
 6. [Array Fundamentals](./06-array-fundamentals.md)
 7. [Array Level 2 — Problems & Solutions](./array-level-2.md)
 
+## Number-Based Programming
+
+- [Digit Extraction](./Number%20Based%20Programming/01%20-%20Digit%20Extraction.md) — completed
+
 ## How to use these notes
 
 - Read the concept and understand what each line does.
