@@ -11,6 +11,7 @@ Problems are grouped by topic so the repository stays easy to navigate.
 - [121. Best Time to Buy and Sell Stock](./Arrays/0121-best-time-to-buy-and-sell-stock.md)
 - [189. Rotate Array](./Arrays/0189-rotate-array.md)
 - [283. Move Zeroes](./Arrays/0283-move-zeroes.md)
+- [724. Find Pivot Index](./Arrays/0724-find-pivot-index.md)
 - [977. Squares of a Sorted Array](./Arrays/0977-squares-of-a-sorted-array.md)
 - [1295. Find Numbers with Even Number of Digits](./Arrays/1295-find-numbers-with-even-number-of-digits.md)
 - [1480. Running Sum of 1D Array](./Arrays/1480-running-sum-of-1d-array.md)
