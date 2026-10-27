@@ -16,9 +16,6 @@ Input: `[1,2,3,4]`
 
 Output: `[1,3,6,10]`
 
-## Code note
-I don't have a reliable record of the exact code you personally typed for this problem. Since you asked me not to put assistant-written code in your notes as if it were yours, I have left the code section out for now. When you retry it and send your code, I'll add your version.
-
 ## Complexity
 - Time: `O(n)`
 - Extra space: `O(n)` if you create a separate answer vector; `O(1)` extra space if you update `nums` in place.
