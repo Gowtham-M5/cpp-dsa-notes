@@ -19,6 +19,9 @@ Problems are grouped by topic so the repository stays easy to navigate.
 - [1672. Richest Customer Wealth](./Arrays/1672-richest-customer-wealth.md)
 - [1920. Build Array from Permutation](./Arrays/1920-build-array-from-permutation.md)
 
+- [485. Max Consecutive Ones](./Arrays/0485-max-consecutive-ones.md)
+- [1365. How Many Numbers Are Smaller Than the Current Number](./Arrays/1365-how-many-numbers-are-smaller-than-the-current-number.md)
+
 ## Notes rule
 - Keep the solution code that I personally typed or practised.
 - Do not add an optimized alternative or a new technique unless I have learned and practised it.
