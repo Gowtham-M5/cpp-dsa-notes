@@ -14,6 +14,7 @@ Problems are grouped by topic so the repository stays easy to navigate.
 - [724. Find Pivot Index](./Arrays/0724-find-pivot-index.md)
 - [977. Squares of a Sorted Array](./Arrays/0977-squares-of-a-sorted-array.md)
 - [1295. Find Numbers with Even Number of Digits](./Arrays/1295-find-numbers-with-even-number-of-digits.md)
+- [1299. Replace Elements with Greatest Element on Right Side](./Arrays/1299-replace-elements-with-greatest-element-on-right-side.md)
 - [1480. Running Sum of 1D Array](./Arrays/1480-running-sum-of-1d-array.md)
 - [1512. Number of Good Pairs](./Arrays/1512-number-of-good-pairs.md)
 - [1672. Richest Customer Wealth](./Arrays/1672-richest-customer-wealth.md)
