@@ -57,9 +57,21 @@ Both variables start at 0 because the biker begins at altitude 0.
 1. Initialize `global = 0` to represent the current altitude.
 2. Initialize `highest = 0` to include the starting altitude as a possible maximum.
 3. Traverse the `gain` array from left to right.
-4. Add the current gain to `global`. This gives the new altitude.
-5. Compare the new altitude with `highest` and update `highest` if the new altitude is greater.
-6. After processing every element, return `highest`.
+4. Save the current gain value in `cur`.
+5. Add `cur` to `global` to calculate the new altitude.
+6. Compare the new altitude with `highest` and update `highest` if needed.
+7. After processing every element, return `highest`.
+
+### Why do we use `cur`?
+
+`cur` temporarily stores the current gain value:
+
+```cpp
+int cur = gain[i];
+global = global + cur;
+```
+
+This makes the current gain clear and lets us use it to update the running altitude. The input array is not modified.
 
 ### Why does this work?
 
@@ -79,14 +91,15 @@ This allows us to solve the problem in one traversal using constant extra space.
 class Solution {
 public:
     int largestAltitude(vector<int>& gain) {
-        int global = 0;
+        int global=0;
         int highest = 0;
+        for(int i=0;i<gain.size();i++){
+            int cur=gain[i];
+            
+            global=global+cur;
+            highest=max(global,highest);
 
-        for (int i = 0; i < gain.size(); i++) {
-            global = global + gain[i];
-            highest = max(global, highest);
         }
-
         return highest;
     }
 };
@@ -113,10 +126,16 @@ public:
 - Traverses every element in the array.
 - The condition uses `i < gain.size()`, so the last valid index is `gain.size() - 1`.
 
-### `global = global + gain[i];`
+### `int cur = gain[i];`
 
-- Adds the current altitude change to the previous altitude.
+- Stores the current gain value in a temporary variable.
+
+### `global = global + cur;`
+
+- Adds the current gain to the previous altitude.
 - The updated `global` is the altitude after this point.
+
+The code only reads from `gain`; it does not modify the input array.
 
 ### `highest = max(global, highest);`
 
@@ -144,7 +163,7 @@ global = 0
 highest = 0
 ```
 
-| Index | gain[i] | Calculation | Current altitude (`global`) | Highest |
+| Index | `cur` (current gain) | Calculation | Current altitude (`global`) | Highest |
 |---:|---:|---|---:|---:|
 | Start | — | Initial altitude | 0 | 0 |
 | 0 | -5 | 0 + (-5) | -5 | 0 |
@@ -243,13 +262,7 @@ The corrected condition is:
 i < gain.size()
 ```
 
-An earlier version also assigned the current altitude back into the input array:
-
-```cpp
-gain[i] = global;
-```
-
-That modification was unnecessary. We only need to read `gain[i]` and update the two variables. The final solution leaves the input array unchanged.
+The accepted solution uses `cur` as a temporary variable to hold the current gain before adding it to the running altitude. It does not overwrite or otherwise modify the input array.
 
 ### Key takeaways
 
@@ -269,7 +282,8 @@ That modification was unnecessary. We only need to read `gain[i]` and update the
 | What does `highest` store? | Maximum altitude reached so far |
 | Why initialize `highest` to 0? | The starting altitude is 0 and must be considered |
 | Which pattern is used? | Running Sum + Maximum Tracking |
-| Do we need to modify the input array? | No |
+| What does `cur` store? | The current gain value from `gain[i]` |
+| Does the solution modify the input array? | No |
 | Time complexity? | O(n) |
 | Auxiliary space complexity? | O(1) |
 | Submission status? | Accepted |
