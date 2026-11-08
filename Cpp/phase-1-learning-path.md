@@ -51,7 +51,7 @@
 - [x] Count digits
 - [x] Sum of digits
 - [x] Reverse a number (including negative numbers and integer-overflow handling)
-- [ ] Palindrome number
+- [x] Palindrome number
 - [ ] Armstrong number
 - [ ] Prime number
 - [ ] Find factors of a number
@@ -177,8 +177,8 @@
 
 ## Current Position
 
-**Completed sections:** 1–4 and 7–8. In Number-Based Programming, Digit Extraction, Count Digits, Sum of Digits, and Reverse a Number are completed.
+**Completed sections:** 1–4 and 7–8. In Number-Based Programming, Digit Extraction, Count Digits, Sum of Digits, Reverse a Number, and Palindrome Number are completed.
 
-**Next topic:** Palindrome Number.
+**Next topic:** Armstrong Number.
 
 **Scope note:** This file tracks Phase 1 C++ programming fundamentals only. Phase 2 Data Structures and Algorithms is maintained separately.
