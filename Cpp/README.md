@@ -16,6 +16,7 @@ This section contains the C++ concepts and array problem-solving techniques I ha
 
 - [Digit Extraction](./Number%20Based%20Programming/01%20-%20Digit%20Extraction.md) — completed
 - [Count Digits](./Number%20Based%20Programming/02%20-%20Count%20Digits.md) — completed
+- [Sum of Digits](./Number%20Based%20Programming/03%20-%20Sum%20of%20Digits.md) — completed
 
 ## How to use these notes
 
