@@ -50,7 +50,7 @@
 - [x] Digit extraction
 - [x] Count digits
 - [x] Sum of digits
-- [ ] Reverse a number
+- [x] Reverse a number (including negative numbers and integer-overflow handling)
 - [ ] Palindrome number
 - [ ] Armstrong number
 - [ ] Prime number
@@ -177,8 +177,8 @@
 
 ## Current Position
 
-**Completed sections:** 1–4 and 7–8. In Number-Based Programming, Digit Extraction, Count Digits, and Sum of Digits are completed.
+**Completed sections:** 1–4 and 7–8. In Number-Based Programming, Digit Extraction, Count Digits, Sum of Digits, and Reverse a Number are completed.
 
-**Next topic:** Reverse a Number.
+**Next topic:** Palindrome Number.
 
 **Scope note:** This file tracks Phase 1 C++ programming fundamentals only. Phase 2 Data Structures and Algorithms is maintained separately.
