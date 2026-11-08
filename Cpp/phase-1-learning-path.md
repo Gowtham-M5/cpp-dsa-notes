@@ -47,9 +47,9 @@
 
 ## 5. Number-Based Programming
 
-- [ ] Digit extraction
-- [ ] Count digits
-- [ ] Sum of digits
+- [x] Digit extraction
+- [x] Count digits
+- [x] Sum of digits
 - [ ] Reverse a number
 - [ ] Palindrome number
 - [ ] Armstrong number
@@ -177,8 +177,8 @@
 
 ## Current Position
 
-**Completed sections:** 1–4 and 7–8.
+**Completed sections:** 1–4 and 7–8. In Number-Based Programming, Digit Extraction, Count Digits, and Sum of Digits are completed.
 
-**Next topic:** Section 5 — Number-Based Programming, if it has not already been covered.
+**Next topic:** Reverse a Number.
 
 **Scope note:** This file tracks Phase 1 C++ programming fundamentals only. Phase 2 Data Structures and Algorithms is maintained separately.
