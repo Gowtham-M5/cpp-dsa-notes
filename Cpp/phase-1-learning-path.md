@@ -54,7 +54,7 @@
 - [x] Palindrome number
 - [x] Armstrong number
 - [x] Prime number
-- [ ] Find factors of a number
+- [x] Find factors of a number
 - [ ] GCD and LCM
 - [ ] Fibonacci series
 
@@ -177,8 +177,8 @@
 
 ## Current Position
 
-**Completed sections:** 1–4 and 7–8. In Number-Based Programming, Digit Extraction, Count Digits, Sum of Digits, Reverse a Number, Palindrome Number, Armstrong Number, and Prime Number are completed.
+**Completed sections:** 1–4 and 7–8. In Number-Based Programming, Digit Extraction, Count Digits, Sum of Digits, Reverse a Number, Palindrome Number, Armstrong Number, Prime Number, and Find Factors of a Number are completed.
 
-**Next topic:** Find factors of a number.
+**Next topic:** GCD and LCM.
 
 **Scope note:** This file tracks Phase 1 C++ programming fundamentals only. Phase 2 Data Structures and Algorithms is maintained separately.
